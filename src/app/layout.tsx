@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "FreelanceTimer - Smart Time Tracking & Invoicing",
@@ -15,7 +16,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className="antialiased">{children}</body>
+        <body className="antialiased flex flex-col min-h-screen">
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
+        </body>
       </html>
     </ClerkProvider>
   );
